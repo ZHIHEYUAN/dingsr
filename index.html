@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenithRane - 个人主页</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="css\photos\favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -1;
+            object-fit: cover;
+        }
+        
+        @media (max-aspect-ratio: 16/9) {
+            #video-background {
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+        @media (min-aspect-ratio: 16/9) {
+            #video-background {
+                width: auto;
+                height: 100%;
+            }
+        }
+        
+        #overlay {
+            position: relative;
+            z-index: 1;
+        }
+        
+        #main-content {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+        
+        .profile-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .profile-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info {
+            font-size: 1.2em;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        
+        .contact-link {
+            color: #4361ee;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background-color: rgba(67, 97, 238, 0.1);
+            display: inline-block;
+            border: 2px solid transparent;
+            margin: 10px;
+        }
+        
+        .contact-link:hover {
+            color: white;
+            background-color: #4361ee;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        #main-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .profile-section {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+    </style>
+</head>
+<body>
+    <!-- 视频背景 -->
+    <video id="video-background" autoplay muted loop>
+        <source src="css\photos\day.webm" type="video/webm">
+        您的浏览器不支持视频标签。
+    </video>
+    
+    <div id="overlay">
+        <div id="main-content">
+            <div class="profile-section">
+                <h1>ZenithRane</h1>
+                <p style="font-size: 1.1em; color: #7f8c8d; margin-bottom: 30px;">欢迎来到我的个人主页</p>
+                
+                <div class="contact-info">
+                    <strong>QQ:</strong> 3456028736
+                </div>
+                
+                <div class="contact-info">
+                    <strong>哔哩哔哩:</strong>
+                    <br>
+                    <a href="https://space.bilibili.com/3461580769462356" class="contact-link" target="_blank">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2C6.477,2,2,6.477,2,12s4.477,10,10,10s10-4.477,10-10S17.523,2,12,2z M14.226,16.225
+                                c-0.141,0.141-0.368,0.141-0.509,0l-1.717-1.717l-1.717,1.717c-0.141,0.141-0.368,0.141-0.509,0l-0.509-0.509
+                                c-0.141-0.141-0.141-0.368,0-0.509l1.717-1.717l-1.717-1.717c-0.141-0.141-0.141-0.368,0-0.509l0.509-0.509
+                                c0.141-0.141,0.368-0.141,0.509,0l1.717,1.717l1.717-1.717c0.141-0.141,0.368-0.141,0.509,0l0.509,0.509
+                                c0.141,0.141,0.141,0.368,0,0.509l-1.717,1.717l1.717,1.717c0.141,0.141,0.141,0.368,0,0.509L14.226,16.225z"/>
+                        </svg>
+                        访问我的哔哩哔哩空间
+                    </a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background-color: rgba(255, 255, 255, 0.8); border-radius: 10px;">
+                <p style="color: #7f8c8d; margin: 0;">
+                    感谢您的访问！
+                </p>
+            </div>
+        </div>
+        
+        <div id="Information">
+            <p>© 2025 ZenithRane. 个人主页</p>
+            
+            <a href="tools.html" class="contact-link" target="_blank">工具</a>
+        </div>
+    </div>
+    
+    <script>
+        // 确保视频背景正常工作
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('video-background');
+            video.play().catch(function(error) {
+                console.log('视频自动播放被阻止:', error);
+            });
+            
+            // 添加点击播放功能
+            document.addEventListener('click', function() {
+                video.play().catch(function(error) {
+                    console.log('视频播放被阻止:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
